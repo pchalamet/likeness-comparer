@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Comparer.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <!-- https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#packing-using-a-nuspec -->
+    <PackageId>LikenessComparer</PackageId>
+    <Authors>Pierre Chalamet</Authors>
+    <Title>LikenessComparer</Title>
+    <Description>Likeness comparer for unit-tests.</Description>
+    <Copyright>Copyright 2020 Pierre Chalamet</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/pchalamet/likeness-comparer</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/pchalamet/likeness-comparer.git</RepositoryUrl>
+    <PackageTags>duck;likeness;comparer;unit-test</PackageTags>
+  </PropertyGroup>
+
+</Project>
