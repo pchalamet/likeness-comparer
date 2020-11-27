@@ -17,8 +17,7 @@ type private OrderedContractResolver() =
 module Comparer =
     let private jsonSerializerSettings = JsonSerializerSettings(ContractResolver = OrderedContractResolver())
 
-    let private serialize (x: obj) =
-        JsonConvert.SerializeObject(x, Formatting.Indented, jsonSerializerSettings)
+    let private serialize (x: obj) = JsonConvert.SerializeObject(x, jsonSerializerSettings)
 
     let areAlike (x: obj) (y: obj) =
         let contentX = serialize x
