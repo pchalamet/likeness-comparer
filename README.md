@@ -12,17 +12,24 @@ In order to do this, objects are serialized to Json (with ordered fields) and si
 
 # Api
 
-If you are using C#, use `Likeness.Comparer.AreAlike` (Pascal case).
-If you are using F#, use `Likeness.Comparer.areAlike` (caml case).
+| Language | Api |
+|----------|-----|
+| C# | `Likeness.Comparer.AreAlike` (Pascal case) |
+| F# | `Likeness.Comparer.areAlike` (caml case) |
 
-Both are taking 2 arguments of type `System.Object`. Basically, you can test for equality on anything, even null.
+Both require 2 arguments of type `System.Object`. Basically, you can test for equality on anything, even null.
 
 It returns `true` if objects are alike, `false` otherwise. 
 
+# Comparison details
+
+* Option.None is alike null
+* Enumerables with same contents are alike (`seq` and `list` for eg)
+
 # Notes
 
-NOTE1: do not use this on production system. It's been done to perform comparison in unit tests.
+* Do not use this on production system. It's been done to perform comparison in unit tests.
 
-NOTE2: peformance can't be good since serialization to Json is done.
+* Peformance can't be good since serialization to Json is done.
 
-NOTE3: this use Newtonsoft.Json.
+* This use Newtonsoft.Json.
