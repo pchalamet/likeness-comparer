@@ -12,18 +12,13 @@ In order to do this, objects are serialized to Json (with ordered fields) and si
 
 # Api
 
-| Language | Api |
-|----------|-----|
-| C# | `Likeness.Comparer.AreAlike` (Pascal case) |
-| F# | `Likeness.Comparer.areAlike` (caml case) |
+| Function | Description | Returns |
+|----------|-------------|---------|
+| `Likeness.Comparer.AreAlike` | Takes 2 parameters. Order is not important. `null` is valid parameter. | It returns `true` if objects are alike, `false` otherwise. |
 
-Both require 2 arguments of type `System.Object`. Basically, you can test for equality on anything, even null.
+ # Comparison details
 
-It returns `true` if objects are alike, `false` otherwise. 
-
-# Comparison details
-
-* Option.None is alike null
+* Option.None is same as null
 * Enumerables with same contents are alike (`seq` and `list` for eg)
 
 # Notes
@@ -32,4 +27,4 @@ It returns `true` if objects are alike, `false` otherwise.
 
 * Peformance can't be good since serialization to Json is done.
 
-* This use Newtonsoft.Json.
+* This use Newtonsoft.Json. If your object use attributes, expect impacts.

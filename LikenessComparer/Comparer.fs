@@ -19,9 +19,7 @@ module Comparer =
 
     let private serialize (x: obj) = JsonConvert.SerializeObject(x, jsonSerializerSettings)
 
-    let areAlike (x: obj) (y: obj) =
+    let AreAlike (x: obj) (y: obj) =
         let contentX = serialize x
         let contentY = serialize y
         contentX = contentY
-
-    let AreAlike (x: obj, y: obj) = areAlike x y
